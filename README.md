@@ -8,22 +8,22 @@ The project directory is structured as follows:
 
 ```
 .
-├── bamboo-specs
-├── conf
-├── devops
+VTT-Example-IDS-Connector/
+├── assets/
+├── config/
 ├── docker-compose.yml
-├── Makefile
+├── LICENSE
 ├── README.md
-└── sonar-project.properties
 ```
+-assets/: Contains supporting static resources required by the project, such as sample data, certificates, or auxiliary files for the IDS Connector.
 
-- `bamboo-specs`: This directory contains sepecific parameters needed by the Bamboo tool
-- `conf`: This directory contains the needed config.json file as well as p12 certification files
-- `devops`: Contains dev, prod and qa values
-- `docker-compose.yml`: Docker Compose configuration for orchestrating the services.
-- `Makefile`: Includes configuration details on how to build the docker container.
-- `README.md`: Description of the repository contents
-- `sonar-project.properties`: Contains project details (name, version etc.)
+-config/: Includes configuration files used by the connector, such as JSON settings, property files, and other service configuration artifacts.
+
+-docker-compose.yml: Docker Compose configuration for orchestrating and running the required services.
+
+-LICENSE: Defines the licensing terms under which the project is distributed.
+
+-README.md: Provides an overview and documentation of the repository contents.
 
 All components included in the project are built using the same docker compose file. The file has references to docker images that are imported from remote repositories. 
 
