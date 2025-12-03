@@ -1,4 +1,5 @@
 version: '3.0'
+
 services:
   postgresa:
     image: postgres:13
@@ -16,9 +17,9 @@ services:
 
   connector:
     image: ghcr.io/advanced-dataspaces-vtt/vtt-example-ids-connector/vtt-connector:simplified_compose
-    container_name: vtt-connector
+    container_name: vtt-provider-connector
     ports:
-      - 8081:8081
+      - "8081:8081"
     environment:
       - CONFIGURATION_PATH=/config/config.json
       - SERVER_PORT=8081
@@ -36,29 +37,15 @@ services:
       - SPRING_DATASOURCE_USERNAME=postgresusera
       - SPRING_DATASOURCE_PASSWORD=password
       - SPRING_JPA_DATABASE_PLATFORM=org.hibernate.dialect.PostgreSQLDialect
+      # IDS Connector variables
+      - IS_IDS_PROVIDER="true"
+      - IDS_CONECTOR_CREDENTIAL=YWRtaW46cGFzc3dvcmQ=
+      - IDS_INTERNAL_CONECTOR_ENDPOINT=https://130.188.160.19:8081
+      - IDS_PUBLIC_CONECTOR_ENDPOINT=https://vtt-provider-connector:8081
     networks:
       - local
     depends_on:
       - postgresa
 
-
   ui:
     image: ryankford/vtt-example-connector-ui:latest-amd64
-    container_name: 'vtt-connector-ui'
-    environment:
-      - CONNECTOR_URL=https:130.188.160.19//:8081
-      - CONNECTOR_USER=admin
-      - CONNECTOR_PASSWORD=password
-    ports:
-      - 8080:8083
-    networks:
-      - local
-    depends_on:
-      - connector
-
-volumes:
-  connector-dataa: {}
-
-networks:
-  local:
-    driver: bridge
