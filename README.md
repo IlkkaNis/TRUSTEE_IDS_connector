@@ -59,7 +59,7 @@ For detailed information about the licenses of individual components, refer to t
 
 # Overview
 
-In your browser proceed to `http://server-ip:8080/` and you will be reidrected to `http://server-ip:8080/dashboard` and should see the following:
+In your browser proceed to `http://server-ip:8081/` and you will be reidrected to `http://server-ip:8081/dashboard` and should see the following:
 
 ![dashboard](/assets/ui-dashboard.png)
 
