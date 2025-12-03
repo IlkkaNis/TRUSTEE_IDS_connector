@@ -40,7 +40,7 @@ To set up and run the VTT Example IDS Connector, follow these steps:
 
 ### Running the connector 
 
-1. Open the file 'docker-compose.yml' and edit the line 36 by replacing the '*server_ip / localhost*' to match with your deployment environment (e.g., if you are running the connector in localhost, the line would be 'CONNECTOR_URL=https://localhost:8081' 
+1. Open the file 'docker-compose.yml' and edit the line 43 by replacing the '*server_ip / localhost*' to match with your deployment environment (e.g., if you are running the connector in localhost, the line would be 'CONNECTOR_URL=https://localhost:8081' 
 
 2. From the root directory run `docker compose up --build -d` this will start the `VTT_connector` and `VTT_UI` in detached mode	
 
