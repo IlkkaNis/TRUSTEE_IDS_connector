@@ -44,9 +44,9 @@ To set up and run the VTT Example IDS Connector, follow these steps:
 
 2. From the root directory run `docker compose up --build -d` this will start the `VTT_connector` and `VTT_UI` in detached mode	
 
-3. Once the services have started you can navigate to `http://localhost:8080` to access the user interface
+3. Once the services have started you can navigate to `http://localhost:8081` to access the user interface
 
-   Please note that when deploying to a server, `http://localhost:8080` should be replaced with `http://server-ip:8080` to access the user interface
+   Please note that when deploying to a server, `http://localhost:8081` should be replaced with `http://server-ip:8080` to access the user interface
 
 
 ## License
